@@ -31,11 +31,3 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
-    - name: Deploy to Server
-      env:
-        SERVER_USER: ${{ secrets.SERVER_USER }}
-        SERVER_URL: own2
-        SERVER_PATH: ${{ secrets.SERVER_PATH }}
-      run: |
-        rsync -avrc --delete -e 'ssh' "${PWD}/dist/" $SERVER_USER@$SERVER_URL:$SERVER_PATH
-        echo "Website deployed successfully"
