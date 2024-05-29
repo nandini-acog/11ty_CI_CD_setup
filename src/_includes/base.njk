@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% include 'title-and-meta.njk' %}
+	<link rel="stylesheet" href="{{'/style.css' | url}}">
+
+</head>
+<body>
+	{% include 'header.njk' %}
+	<main>
+		{{ content | safe }}
+	</main>
+	{% include 'footer.njk' %}
+</body>
+</html>
